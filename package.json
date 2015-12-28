@@ -4,12 +4,25 @@
   "description": "Parses geogrid files for online mapping applications",
   "main": "index.js",
   "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
     "eslint": "^1.10.3",
-    "tape": "^4.4.0"
+    "istanbul-instrumenter-loader": "^0.1.3",
+    "karma": "^0.13.16",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-phantomjs-launcher": "^0.2.2",
+    "karma-tap": "^1.0.3",
+    "karma-webpack": "^1.7.0",
+    "phantomjs": "^1.9.19",
+    "tape": "^4.4.0",
+    "webpack": "^1.12.9"
   },
   "scripts": {
-    "test": "tape 'test/**/*.js'",
-    "lint": "eslint . --ext .js"
+    "test": "karma start --single-run --browsers PhantomJS",
+    "lint": "eslint . --ext .js ."
   },
   "repository": {
     "type": "git",
@@ -29,5 +42,10 @@
   "dependencies": {
     "d3": "^3.5.12",
     "lodash": "^3.10.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }

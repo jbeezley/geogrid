@@ -184,8 +184,8 @@ Index.prototype.validate = function () {
  */
 Index.prototype.tile2proj = function (x, y) {
     return {
-        x: x * this.options.dtilex + this.options.originx,
-        y: y * this.options.dtiley + this.options.originy
+        x: x * this.dtilex + this.originx,
+        y: y * this.dtiley + this.originy
     };
 };
 
@@ -211,8 +211,8 @@ Index.prototype.proj2world = function (x, y) {
  */
 Index.prototype.proj2tile = function (x, y) {
     return {
-        x: (x - this.options.originx) / this.options.dtilex,
-        y: (y - this.options.originy) / this.options.dtiley
+        x: (x - this.originx) / this.dtilex,
+        y: (y - this.originy) / this.dtiley
     };
 };
 
