@@ -1,0 +1,33 @@
+{
+  "name": "geogrid",
+  "version": "0.1.0",
+  "description": "Parses geogrid files for online mapping applications",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "tape": "^4.4.0"
+  },
+  "scripts": {
+    "test": "tape 'test/**/*.js'",
+    "lint": "eslint . --ext .js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbeezley/geogrid.git"
+  },
+  "author": "Jonathan Beezley (https://github.com/jbeezley)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbeezley/geogrid/issues"
+  },
+  "homepage": "https://github.com/jbeezley/geogrid#readme",
+  "eslintConfig": {
+    "env": {
+      "commonjs": true
+    }
+  },
+  "dependencies": {
+    "d3": "^3.5.12",
+    "lodash": "^3.10.1"
+  }
+}
