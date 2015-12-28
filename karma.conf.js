@@ -4,6 +4,7 @@ module.exports = function (config) {
           require('karma-webpack'),
           require('karma-tap'),
           require('karma-chrome-launcher'),
+          require('karma-firefox-launcher'),
           require('karma-phantomjs-launcher'),
           require('karma-coverage'),
           require('karma-coveralls')
@@ -47,7 +48,7 @@ module.exports = function (config) {
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: ['Chrome', 'PhantomJS'],
+        browsers: ['Chrome', 'Firefox', 'PhantomJS'],
         singleRun: false,
         concurrency: Infinity
     });

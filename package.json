@@ -23,6 +23,8 @@
   },
   "scripts": {
     "test": "karma start --single-run --browsers PhantomJS",
+    "dev": "karma start --single-run",
+    "start": "karma start",
     "lint": "eslint . --ext .js ."
   },
   "repository": {
