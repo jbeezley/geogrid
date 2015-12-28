@@ -5,7 +5,8 @@ module.exports = function (config) {
           require('karma-tap'),
           require('karma-chrome-launcher'),
           require('karma-phantomjs-launcher'),
-          require('karma-coverage')
+          require('karma-coverage'),
+          require('karma-coveralls')
         ],
         basePath: '',
         frameworks: ['tap'],
@@ -35,10 +36,11 @@ module.exports = function (config) {
         },
         reporters: [
             'progress',
-            'coverage'
+            'coverage',
+            'coveralls'
         ],
         coverageReporter: {
-            type: 'text',
+            type: 'lcov',
             dir: 'coverage/'
         },
         port: 9876,
