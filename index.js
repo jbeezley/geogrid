@@ -56,7 +56,8 @@ function Index() {}
  * @param {number} [opts.known_y=1]
  */
 Index.create = function (opts) {
-    index = new Index();
+    var index = new Index();
+    var stdlat;
 
     index.options = _.extend({}, Index.defaults, opts);
 
@@ -129,8 +130,6 @@ Index.defaults = {
 Index.parse = function (str) {
     var lines = str.split(/\r\n?|\n/);
     var options = {};
-    var stdlat;
-    var index;
 
     lines.forEach(function (line) {
         var keyval, key, val;

@@ -25,7 +25,7 @@
     "test": "karma start --single-run --browsers PhantomJS",
     "dev": "karma start --single-run",
     "start": "karma start",
-    "lint": "eslint . --ext .js ."
+    "lint": "eslint . --ext .js"
   },
   "repository": {
     "type": "git",
@@ -39,7 +39,8 @@
   "homepage": "https://github.com/jbeezley/geogrid#readme",
   "eslintConfig": {
     "env": {
-      "commonjs": true
+      "commonjs": true,
+      "es6": true
     }
   },
   "dependencies": {
