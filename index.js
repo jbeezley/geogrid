@@ -65,6 +65,7 @@ Index.create = function (opts) {
         throw new Error('Invalid projection "' + index.options.projection + '"');
     }
 
+    index.projection = Index.projections[index.options.projection]()
     index.dtilex = index.options.dx * index.options.tile_x;
     index.dtiley = index.options.dy * index.options.tile_y;
     index.originx = index.options.known_lon -
@@ -75,9 +76,8 @@ Index.create = function (opts) {
     stdlat = 0;
     if (index.options.projection === 'polar') {
         stdlat = index.options.truelat1;
+        index.projection.rotate([index.stdlon, stdlat]);
     }
-    index.projection = Index.projections[index.options.projection]()
-        .rotate([index.stdlon, stdlat]);
 
     if (index.options.projection === 'mercator') {
         index.projection.parallels([
@@ -96,10 +96,8 @@ Index.create = function (opts) {
     stdlat = 0;
     if (index.options.projection === 'polar') {
         stdlat = index.options.truelat1;
+        index.projection.rotate([index.stdlon, stdlat]);
     }
-    index.projection = Index.projections[index.options.projection]()
-        .rotate([index.stdlon, stdlat]);
-
 
     if (index.options.projection === 'mercator') {
         index.projection.parallels([
